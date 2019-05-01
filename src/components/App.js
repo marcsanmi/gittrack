@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 import Navbar from './Navbar';
+import ReposList from './ReposGrid';
 
 class App extends Component {
 	constructor(props) {
@@ -12,14 +12,10 @@ class App extends Component {
 		return (
 			<div>
 				<Navbar />
+				<ReposList />
 			</div>
 		);
 	}
 }
 
-const mapStateToProps = ({ repos }) => {
-	const { list } = repos;
-	return { list };
-};
-
-export default connect(mapStateToProps)(App);
+export default App;

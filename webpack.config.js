@@ -49,7 +49,7 @@ const commonConfig = {
 };
 
 const mainConfig = lodash.cloneDeep(commonConfig);
-mainConfig.entry = "./main.js";
+mainConfig.entry = ["babel-polyfill", "./main.js"];
 mainConfig.target = "electron-main";
 mainConfig.output.filename = "main.bundle.js";
 mainConfig.plugins = [
@@ -64,7 +64,7 @@ mainConfig.plugins = [
 ];
 
 const rendererConfig = lodash.cloneDeep(commonConfig);
-rendererConfig.entry = "./src/renderer/renderer.jsx";
+rendererConfig.entry = ["babel-polyfill", "./src/renderer/renderer.jsx"];
 rendererConfig.target = "electron-renderer";
 rendererConfig.output.filename = "renderer.bundle.js";
 rendererConfig.plugins = [
